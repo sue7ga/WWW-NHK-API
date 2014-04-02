@@ -1,11 +1,41 @@
 package WWW::NHK::API;
+
 use 5.008005;
 use strict;
 use warnings;
+use WWW::NHK::API::Provider;
 
 our $VERSION = "0.01";
 
+sub new{
+ my($class,%opt) = @_;
+ my $self = {
+   apikey => $opt{apikey},
+ };
+ bless $self,$class;
+ $self;
+}
 
+sub list{
+ my $self = shift;
+ WWW::NHK::API::Provider->dispatch('list',@_);
+}
+
+sub genre{
+ my $self = shift;
+ WWW::NHK::API::Provider->dispatch('genre',@_);
+}
+
+sub info{
+ my $self = shift;
+ return @_;
+ WWW::NHK::API::Provider->dispatch('info',@_);
+}
+
+sub now_on_air{
+ my $self = shift;
+ WWW::NHK::API::Provider->dispatch('now_on_air',@_);
+}
 
 1;
 __END__
