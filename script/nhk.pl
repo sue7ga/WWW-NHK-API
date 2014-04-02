@@ -7,11 +7,11 @@ use FindBin;
 use lib "$FindBin::Bin/../lib";
 use WWW::NHK::API;
 
-my $nhk = WWW::NHK::API->new(apikey => 'UqCm6EDFh00qSArYkKw4MQo9XAvPMiHm');
+my $nhk = WWW::NHK::API->new({apikey => 'UqCm6EDFh00qSArYkKw4MQo9XAvPMiHm'});
 
 use Data::Dumper;
 
-my $arg =  $nhk->list({'area'=>'130','service'=>'g1','date' =>'2014-04-02'});
+my $arg = $nhk->now_on_air({area => '130',service => 'g1'});
 
 print Dumper $arg;
 

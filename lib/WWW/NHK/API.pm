@@ -8,12 +8,17 @@ use WWW::NHK::API::Provider;
 our $VERSION = "0.01";
 
 sub new{
- my($class,%opt) = @_;
+ my($class,$opt) = @_;
  my $self = {
-   apikey => $opt{apikey},
+   apikey => $opt->{apikey},
  };
  bless $self,$class;
  $self;
+}
+
+sub apikey{
+ my $self = shift;
+ return $self->{apikey};
 }
 
 sub list{
@@ -33,9 +38,8 @@ sub info{
 
 sub now_on_air{
  my $self = shift;
- WWW::NHK::API::Provider->dispatch('now_on_air',@_);
+ WWW::NHK::API::Provider->dispatch('nowonair',@_);
 }
-
 
 1;
 __END__
