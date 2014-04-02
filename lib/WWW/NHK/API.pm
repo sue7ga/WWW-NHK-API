@@ -28,7 +28,8 @@ sub genre{
 
 sub info{
  my $self = shift;
- return @_;
+ my %hash = @_;
+ return %hash;
  WWW::NHK::API::Provider->dispatch('info',@_);
 }
 

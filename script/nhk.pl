@@ -11,8 +11,7 @@ my $nhk = WWW::NHK::API->new(apikey => 'UqCm6EDFh00qSArYkKw4MQo9XAvPMiHm');
 
 use Data::Dumper;
 
-my $arg =  $nhk->list('hoge'=>'g1','kaku'=>'100');
-
+my $arg =  $nhk->list('area'=>'130','service'=>'g1','date' =>'2014-04-01');
 
 print Dumper $arg;
 
