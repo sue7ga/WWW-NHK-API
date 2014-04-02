@@ -28,8 +28,6 @@ sub genre{
 
 sub info{
  my $self = shift;
- my %hash = @_;
- return %hash;
  WWW::NHK::API::Provider->dispatch('info',@_);
 }
 
@@ -37,6 +35,7 @@ sub now_on_air{
  my $self = shift;
  WWW::NHK::API::Provider->dispatch('now_on_air',@_);
 }
+
 
 1;
 __END__

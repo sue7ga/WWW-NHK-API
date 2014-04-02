@@ -8,7 +8,6 @@ use Data::Dumper;
 
 sub dispatch{
  my($self,$api_name,$arg) = @_;
- 
  my $class = __PACKAGE__.'::'.ucfirst($api_name);
  $class->call($arg);
 }
