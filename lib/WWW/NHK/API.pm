@@ -23,22 +23,22 @@ sub apikey{
 
 sub list{
  my $self = shift;
- WWW::NHK::API::Provider->dispatch('list',@_);
+ WWW::NHK::API::Provider->dispatch('list',$self->apikey,@_);
 }
 
 sub genre{
  my $self = shift;
- WWW::NHK::API::Provider->dispatch('genre',@_);
+ WWW::NHK::API::Provider->dispatch('genre',$self->apikey,@_);
 }
 
 sub info{
  my $self = shift;
- WWW::NHK::API::Provider->dispatch('info',@_);
+ WWW::NHK::API::Provider->dispatch('info',$self->apikey,@_);
 }
 
 sub now_on_air{
  my $self = shift;
- WWW::NHK::API::Provider->dispatch('nowonair',@_);
+ WWW::NHK::API::Provider->dispatch('nowonair',$self->apikey,@_);
 }
 
 1;

@@ -11,11 +11,20 @@ use warnings;
 use Data::Dumper;
 
 sub dispatch{
- my($self,$api_name,$arg) = @_;
+ my($self,$api_name,$apikey,$arg) = @_;
  my $class = __PACKAGE__.'::'.ucfirst($api_name);
- $class->call($arg);
+ $class->call($apikey,$arg);
 }
 
 1;
+
+
+
+
+
+
+
+
+
 
 

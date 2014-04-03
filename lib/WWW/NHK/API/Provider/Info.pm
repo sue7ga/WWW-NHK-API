@@ -9,14 +9,15 @@ use WWW::NHK::API::Provider::Common;
 use LWP::UserAgent;
 
 sub call{
- my($self,$arg) = @_;
+  my($self,$apikey,$arg) = @_;
 
   my $area = $arg->{area};
   my $service = $arg->{service};
   my $id = $arg->{id};
 
  my $content = WWW::NHK::API::Provider::Common->call(
-   "info/$area/$service/$id.json"
+    $apikey
+   ,"info/$area/$service/$id.json"
  );
 
  my $ua = LWP::UserAgent->new;

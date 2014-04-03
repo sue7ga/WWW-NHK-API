@@ -7,11 +7,12 @@ use Carp;
 use JSON;
 
 sub call{
- my($self,$arg) =@_;
+ my($self,$apikey,$arg) =@_;
  my $area = $arg->{area};
  my $service = $arg->{service};
  my $content = WWW::NHK::API::Provider::Common->call(
-   "now/$area/$service.json"
+    $apikey
+   ,"now/$area/$service.json"
  );
  my $ua = LWP::UserAgent->new;
  my $res = $ua->get($content);
